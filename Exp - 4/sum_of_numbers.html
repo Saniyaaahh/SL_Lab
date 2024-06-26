@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of n Numbers Using Popup Boxes</title>
+    <script>
+        function addsum() {
+            alert("Enter a list of numbers.");
+            var keepgoing = true;
+            var sumofnums = 0;
+            while (keepgoing) {
+                sumofnums += parseInt(prompt("What's the next number to add?", ""));
+                keepgoing = confirm("Add another number?");
+            }
+            alert("The sum of all your numbers is " + sumofnums);
+        }
+    </script>
+</head>
+<body>
+    <form name="frm">
+        <input type="button" value="Sum of n numbers" onclick="addsum()"/>
+    </form>
+</body>
+</html>

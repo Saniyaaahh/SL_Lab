@@ -1,0 +1,6 @@
+Write JavaScript to validate the following fields of the above registration page.
+
+1) Name (Name should contains alphabets and the length should not be less than 6 characters).
+2) Password (Password should not be less than 6 characters length).
+3) E-mail id (should not contain any invalid and must follow the standard pattern name@domain.com)
+4) Phone number (Phone number should contain 10 digits only).

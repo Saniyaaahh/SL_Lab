@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial</title> 
+    <script>
+        function factorialcalc() {  
+            var number = parseInt(prompt("Enter a number", "Enter whole number")); 
+            var factorial = 1;
+            for (var i = 1; i <= number; i++) { 
+                factorial *= i;
+            }
+            alert("The factorial of " + number + " is " + factorial);  
+        }
+    </script>
+</head> 
+<body>
+    <form name="form">
+        <input type="button" value="Factorial" onclick="factorialcalc()"/>
+    </form>
+</body>
+</html>
