@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of 5 countries</title>
+    <style>
+        .form {
+            max-width: 300px;
+            margin: 10% auto;
+        }
+        .form input, .form select {
+            width: 100%;
+            padding: 5px 10px;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        #capital {
+            color: blue;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        const setCapital = () => {
+            const capital = document.getElementById("capital");
+            const country = document.getElementById("country");
+            capital.value = country.value;
+        }
+    </script>
+</head>
+<body>
+    <div class="form">
+        <div class="form-group">
+            <label>Capital City</label>
+            <input type="text" id="capital" disabled>
+        </div>
+        <div class="form-group">
+            <label>Country</label>
+            <select name="country" id="country" onchange="setCapital()">
+                <option value=""></option>
+                <option value="Riyadh">Saudi Arabia</option>
+                <option value="New Delhi">India</option>
+                <option value="Abu Dhabi">UAE</option>
+                <option value="Berlin">Germany</option>
+                <option value="Kabul">Afghanistan</option>
+            </select>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number to Words</title>
+    <style>
+        .form {
+            max-width: 400px;
+            margin: 10% auto;
+        }
+        .form input {
+            width: 100%;
+            padding: 5px 15px;
+            margin-bottom: 1rem;
+        }
+        #intoWords {
+            text-transform: capitalize;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 1rem;
+            font-family: monospace;
+            font-size: 1rem;
+        }
+    </style>
+    <script>
+        let a = ['', 'one ', 'two ', 'three ', 'four ', 'five ', 'six ', 'seven ', 'eight ', 'nine ', 'ten ', 'eleven ', 'twelve ', 'thirteen ', 'fourteen ', 'fifteen ', 'sixteen ', 'seventeen ', 'eighteen ', 'nineteen '];
+        let b = ['', '', 'twenty ', 'thirty ', 'forty ', 'fifty ', 'sixty ', 'seventy ', 'eighty ', 'ninety '];
+        
+        function inWords(num) {
+            if ((num = num.toString()).length > 4) 
+                return 'overflow';
+            let n = ('0000' + num).substr(-4).match(/^(\d{1})(\d{1})(\d{2})$/);
+            if (!n) 
+                return;
+            var str = '';
+            str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'thousand ' : '';
+            str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'hundred ' : '';
+            str += (n[3] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'only ' : '';
+            return str.trim();
+        }
+        
+        function convertToWord() {
+            let number = document.getElementById("number").value;
+            if (isNaN(number) || number === "") {
+                alert("Enter numbers only.");
+                return false;
+            }
+            if (number.length > 3) {
+                alert("Number should not be greater than 3 digits.");
+                return false;
+            }
+            document.getElementById("intoWords").innerText = inWords(number);
+        }
+    </script>
+</head>
+<body>
+    <div class="form">
+        <div class="form-group">
+            <label>Number</label>
+            <input type="text" id="number">
+        </div>
+        <input type="button" onclick="convertToWord()" value="Convert to Words">
+        <div id="intoWords"></div>
+    </div>
+</body>
+</html>
